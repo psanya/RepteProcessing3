@@ -1,3 +1,4 @@
+//  Si creesim un objecte de tipus Mover i executem el update i display, es crearia un cercle que seguiria el cursor del ratolí.
 class Mover {
   PVector location;
   PVector velocity;

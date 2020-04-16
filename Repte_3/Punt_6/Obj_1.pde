@@ -1,3 +1,6 @@
+//  Per cada un dels objectes donem uns valors diferents a la localització inicial, la velocitat i l'acceleració.
+//  Es podrien donar valors aleatoris a la velocitat i a l'acceleració si volguessim fer diferents instàncies del mateix objecte
+//  i que es comportessin tots d'una mateixa similar però a diferents velocitats.
 class Obj_1 extends Mover {
   
   PImage img = loadImage("obj1.png");

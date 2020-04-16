@@ -1,17 +1,17 @@
 import java.util.*;
 
-//Mover mover[] = new Mover[60];
+//Declaració de les variables necesàries, importem de la classe java.util per fer servir el contenidor Vector i l'Iterator per guardar la nostra col·lecció d'objectes i poder-los recòrrer.
 Obj_1 obj1;
 Obj_2 obj2;
 Obj_3 obj3;
 Obj_4 obj4;
 Obj_5 obj5;
 Obj_6 obj6;
-Mover kf = new Mover();
 
 Vector<Object> contenidor = new Vector<Object>(); 
 Iterator it = contenidor.iterator();
 
+//  Inicialitzem els nostres objectes i els afegim al Vector.
 void setup() {
 
   size (1280,720);
@@ -29,9 +29,9 @@ void setup() {
   contenidor.add(obj4);
   contenidor.add(obj5);
   contenidor.add(obj6);
-  contenidor.add(kf);
 }
 
+//  Recorrem l'iterador i per cada objecte que trobem, comprovem de quin tipus és i li executem l'update, dispay i el control dels laterals.
 void draw() {
   background(0);
   
@@ -79,12 +79,7 @@ void draw() {
       b2.display();
       b2.checkEdges(); 
     }
-    else {
-      Mover b2 = (Mover) a;
-      b2.update();
-      b2.display();
-      b2.checkEdges(); 
-    }
+    
   }
       
 }
