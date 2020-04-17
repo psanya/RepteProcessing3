@@ -3,29 +3,29 @@
 //  i que es comportessin tots d'una mateixa similar però a diferents velocitats.
 class Obj_6 extends Mover {
   
-  PImage img = loadImage("obj6.png");
+  PImage img = loadImage("snowflake.png");
   
   Obj_6() { 
-    location = new PVector(20,20);
+    location = new PVector(random(0, width-50),random(0, 150));
     velocity = new PVector(0,0);
     acceleracio = new PVector(0,0);
-    velMax = 4;
+    velMax = 2;
   }
   
   public void update() {
     
-    acceleracio = PVector.random2D();
-    acceleracio.div(noise(2));
-    
+    acceleracio.x = random(-3, 3);
+    acceleracio.y = random(0, 2);
+    velocity.y = random(0,3);
     velocity.add(acceleracio);
     velocity.limit(velMax);
-    location.sub(velocity);
+    location.add(velocity);
   }
   
   public void display() { 
-    stroke(0); 
-    fill(160,0,0); 
-    image (img, location.x, location.y); 
+    //stroke(0); 
+    //fill(160,0,0); 
+    image (img, location.x, location.y);
   }
 
   public void setVelMax(float spd) {

@@ -38,4 +38,8 @@
 
 **Entrega 6**
 
+  > En aquest últim apartat m'he atabalat una mica i no tenia gaire clar el que havíem de fer, he fet dos projectes dels quals no n'estic gaire convènçut, entenc tot el tema bastant bé però en aquest punt m'he liat.
+
 ![GIF_5](docs/E5.gif)
+
+![GIF_6](docs/E6.gif)

@@ -33,7 +33,8 @@ class Obj_1 extends Mover {
   
   public void checkEdges() { 
     if (location.x > width) { 
-      location.x = 0; 
+      location.x = 0;
+      location.y = random(height);
     }
     else if (location.x < 0) { 
       location.x = width; 

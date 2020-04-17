@@ -6,16 +6,17 @@ class Obj_4 extends Mover {
   PImage img = loadImage("obj4.png");
   
   Obj_4() { 
-    location = new PVector(0,height-150);
+    location = new PVector(width-20,20);
     velocity = new PVector(0,0);
-    acceleracio = new PVector(1.5,1.5);
-    velMax = 4;
+    acceleracio = new PVector(1,1);
+    velMax = 5;
   }
   
   public void update() {
-
-    acceleracio.div(-2);
     
+    acceleracio = PVector.random2D();
+    acceleracio.div(noise(1));
+    acceleracio.normalize();
     velocity.add(acceleracio);
     velocity.limit(velMax);
     location.sub(velocity);

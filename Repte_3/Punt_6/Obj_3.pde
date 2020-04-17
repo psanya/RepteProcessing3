@@ -6,24 +6,34 @@ class Obj_3 extends Mover {
   PImage img = loadImage("obj3.png");
   
   Obj_3() { 
-    location = new PVector(width/2,height/2);
+    location = new PVector(50,50);
     velocity = new PVector(0,0);
-    acceleracio = new PVector(-2,-2);
-    velMax = 2;
+    acceleracio = new PVector(5,5);
+    velMax = 5;
   }
   
   public void update() {
-    acceleracio = PVector.random2D();
-    acceleracio.mult(noise(2));
+
+    if (location.x <= width/2 && location.y <= height-175) {
+      acceleracio.div(-2);
     
-    velocity.add(acceleracio);
-    velocity.limit(velMax);
-    location.add(velocity);
+      velocity.add(acceleracio);
+      velocity.limit(velMax);
+      location.sub(velocity);
+    }
+    
+    else {
+      acceleracio.sub(random(0,-2), random(0,-2));
+      velocity.sub(acceleracio);
+      velocity.limit(velMax);
+      location.sub(velocity);
+    }
+    
   }
   
   public void display() { 
-    stroke(0); 
-    fill(160,0,0); 
+    //stroke(0); 
+    //fill(160,0,0); 
     image (img, location.x, location.y); 
   }
 
